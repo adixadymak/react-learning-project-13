@@ -15,6 +15,7 @@ export default function ImagePicker({ label, name }) {
   function handleImageChange(event) {
     const file = event.target.files[0];
     if (!file) {
+      setPickdImage(null);
       return;
     }
 
@@ -50,6 +51,7 @@ export default function ImagePicker({ label, name }) {
           ref={imageInputRef}
           //add 'multiple' if you want user to add multiple files
           onChange={handleImageChange}
+          required
         />
         <button
           className={classes.button}
